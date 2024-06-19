@@ -2,6 +2,14 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
+  backend "remote" {
+    organization = "pc-yoshikawa"
+
+    workspaces {
+      name = "tfc-guide-example"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
